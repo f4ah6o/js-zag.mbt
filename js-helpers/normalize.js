@@ -45,3 +45,17 @@ export function invokeWithString(fn, value) {
 export function invokeWithStringArray(fn, arg) {
   return fn(arg);
 }
+
+///|
+/// 関数を整数引数で呼び出すヘルパー
+/// Slider コンポーネントの getThumbValue などで使用
+export function invokeWithInt(fn, value) {
+  return fn(value);
+}
+
+///|
+/// 関数を数値配列引数で呼び出すヘルパー
+/// Slider コンポーネントの setValue で使用
+export function invokeWithNumberArray(fn, arg) {
+  return fn(arg);
+}

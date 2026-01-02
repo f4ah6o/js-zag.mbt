@@ -26,6 +26,9 @@ importers:
       '@zag-js/select':
         specifier: 0.77.1
         version: 0.77.1
+      '@zag-js/slider':
+        specifier: 0.77.1
+        version: 0.77.1
       '@zag-js/switch':
         specifier: 0.77.1
         version: 0.77.1
@@ -450,6 +453,9 @@ packages:
   '@zag-js/element-rect@0.77.1':
     resolution: {integrity: sha512-cHCzdtp30wrM+trYdv0kN9wqUqYc743/muob0gHanDvvbQv8TVZ/tABA6bksL/bWCXk50bm6jiAKV/7dPYdtCQ==}
 
+  '@zag-js/element-size@0.77.1':
+    resolution: {integrity: sha512-USzS/Q10TW02vHmWKUQ1Fizy8cQ6Aco0IWVHaKkEdzmyCJPL+XZnm5Xe9B8nDpsLt9qgR5TblB0zqqr2EqmQkw==}
+
   '@zag-js/focus-visible@0.77.1':
     resolution: {integrity: sha512-hQgkYDxbFuiHvV/bFQGQ278s/WXX/M+7qwr9o4If3lSsIz1U5tfUl7vg7K8cNgr9l5tWpWlb7SeGZ0bqrZWNwA==}
 
@@ -462,6 +468,9 @@ packages:
   '@zag-js/menu@0.77.1':
     resolution: {integrity: sha512-NZ4YfiBWpByF98IaSOwASRZHCRIyj/Xbut3F2bTtoIsG+qQYEbQ4g3qXbmkjJC1GM7AmyiI54ZlKqoNn9wGZ7w==}
 
+  '@zag-js/numeric-range@0.77.1':
+    resolution: {integrity: sha512-ny75qTNaebomkeWUI7X86MSE7c77/Ek8Oi6wNY6Til6YugaLCm2I5P9BO25sGcYj1w3FeUz2uCxRkPMtnxamrg==}
+
   '@zag-js/popper@0.77.1':
     resolution: {integrity: sha512-+DlFlRwuLyUiKl8i+efBYzC6UutcSt1ROHRgmGeB9zwSPvtn1pKlaUqSkxAY2lUDHU56RX8entF5RAeZ8mGwOg==}
 
@@ -473,6 +482,9 @@ packages:
 
   '@zag-js/select@0.77.1':
     resolution: {integrity: sha512-aE+g4xDegGrsdlqDLALh84stwRJwQakNXSw2Rk+gP7BtFvrZ6cHizYvaZVHoVwSn/oNAozYk/eUQMYK1HOdNuw==}
+
+  '@zag-js/slider@0.77.1':
+    resolution: {integrity: sha512-AYcWiQquLyxOKsHreuw+KVf6MEOmBGYuq9qlXm62ZoI5OZIgxKUEw69P8IhP3afowXnrrhq8gnqgEj7W//dDSQ==}
 
   '@zag-js/store@0.77.1':
     resolution: {integrity: sha512-qk9uuXehAiq9BG0Rhd6nGwYI1WiXa3KcFydxbiMnlGiET8/zAeNTw5biYW5riptAmZ6xiwVUNtzg0T58+3YIag==}
@@ -1146,6 +1158,8 @@ snapshots:
 
   '@zag-js/element-rect@0.77.1': {}
 
+  '@zag-js/element-size@0.77.1': {}
+
   '@zag-js/focus-visible@0.77.1':
     dependencies:
       '@zag-js/dom-query': 0.77.1
@@ -1170,6 +1184,8 @@ snapshots:
       '@zag-js/types': 0.77.1
       '@zag-js/utils': 0.77.1
 
+  '@zag-js/numeric-range@0.77.1': {}
+
   '@zag-js/popper@0.77.1':
     dependencies:
       '@floating-ui/dom': 1.6.12
@@ -1192,6 +1208,18 @@ snapshots:
       '@zag-js/dom-query': 0.77.1
       '@zag-js/form-utils': 0.77.1
       '@zag-js/popper': 0.77.1
+      '@zag-js/types': 0.77.1
+      '@zag-js/utils': 0.77.1
+
+  '@zag-js/slider@0.77.1':
+    dependencies:
+      '@zag-js/anatomy': 0.77.1
+      '@zag-js/core': 0.77.1
+      '@zag-js/dom-event': 0.77.1
+      '@zag-js/dom-query': 0.77.1
+      '@zag-js/element-size': 0.77.1
+      '@zag-js/form-utils': 0.77.1
+      '@zag-js/numeric-range': 0.77.1
       '@zag-js/types': 0.77.1
       '@zag-js/utils': 0.77.1
 
