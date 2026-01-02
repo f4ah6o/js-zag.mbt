@@ -14,6 +14,9 @@ importers:
       '@zag-js/accordion':
         specifier: 0.77.1
         version: 0.77.1
+      '@zag-js/checkbox':
+        specifier: 0.77.1
+        version: 0.77.1
       '@zag-js/dialog':
         specifier: 0.77.1
         version: 0.77.1
@@ -419,6 +422,9 @@ packages:
 
   '@zag-js/aria-hidden@0.77.1':
     resolution: {integrity: sha512-Nx8hYDXMsOfGxxLQcfL2pAo4UutE7IGdbYbacsnqbfJhg/vDyTkf4Uhy7HXvZAccGxtj5kb2WeCbtzh9lklwsQ==}
+
+  '@zag-js/checkbox@0.77.1':
+    resolution: {integrity: sha512-PbG/IU80tN1F5V+tGzyAN54p37kS4cQ8U/MUrtBxFOGMy3kGVeVMQCX/xo9fz6H49L+2+4XVzfkTHBDyNVuSxg==}
 
   '@zag-js/core@0.77.1':
     resolution: {integrity: sha512-tY5A/XayGdtiSutjQl4jBzoj2xdka8JD4JuzffsAT7aWJklbfiuIKc0R7dbAviRQ1vFe0Jvmrd3FZz85aJJfdg==}
@@ -1080,6 +1086,17 @@ snapshots:
   '@zag-js/aria-hidden@0.77.1':
     dependencies:
       aria-hidden: 1.2.4
+
+  '@zag-js/checkbox@0.77.1':
+    dependencies:
+      '@zag-js/anatomy': 0.77.1
+      '@zag-js/core': 0.77.1
+      '@zag-js/dom-event': 0.77.1
+      '@zag-js/dom-query': 0.77.1
+      '@zag-js/focus-visible': 0.77.1
+      '@zag-js/form-utils': 0.77.1
+      '@zag-js/types': 0.77.1
+      '@zag-js/utils': 0.77.1
 
   '@zag-js/core@0.77.1':
     dependencies:

@@ -17,3 +17,9 @@ export function createNormalize() {
 export function invokeNoArgs(fn) {
   return fn();
 }
+
+///|
+/// 関数をBool引数で呼び出すヘルパー
+export function invokeWithBool(fn, value) {
+  return fn(value);
+}

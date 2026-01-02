@@ -21,6 +21,7 @@
   "dependencies": {
     "@f4ah6o/zag-js-helpers": "file:./js-helpers",
     "@zag-js/accordion": "0.77.1",
+    "@zag-js/checkbox": "0.77.1",
     "@zag-js/dialog": "0.77.1",
     "@zag-js/menu": "0.77.1",
     "@zag-js/switch": "0.77.1",
