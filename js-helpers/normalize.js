@@ -1,0 +1,19 @@
+///|
+/// Vanilla JS 用の normalize ヘルパー
+/// zag.js の connect 関数に渡す
+
+export function createNormalize() {
+  const identity = (props) => props;
+  return {
+    element: identity,
+    label: identity,
+    input: identity,
+  };
+}
+
+///|
+/// 関数を引数なしで呼び出すヘルパー
+/// MoonBitからJSの関数を呼び出すために使用
+export function invokeNoArgs(fn) {
+  return fn();
+}

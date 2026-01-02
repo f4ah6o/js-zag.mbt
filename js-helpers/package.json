@@ -1,0 +1,8 @@
+{
+  "name": "@f4ah6o/zag-js-helpers",
+  "version": "0.1.0",
+  "type": "module",
+  "exports": {
+    "./normalize": "./normalize.js"
+  }
+}

@@ -50,3 +50,9 @@ pub fn demo() -> Unit {
   @js.log(@js.any("Disabled:"))
   @js.log(@js.any(disabled))
 }
+
+///|
+/// メインエントリーポイント
+fn main {
+  demo()
+}

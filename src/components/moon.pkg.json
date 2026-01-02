@@ -2,6 +2,7 @@
   "import": [
     { "path": "mizchi/js", "alias": "js" }
   ],
+  "is-main": true,
   "link": {
     "zag": {
       "exports": ["demo", "accordion_demo"]

@@ -13,14 +13,10 @@ extern "js" fn js_switch_machine(options : @js.Any) -> @js.Any =
   "machine"
 
 // @zag-js/switch から connect 関数をインポート
+// zag.js 0.77.1: connect(state, send, normalize) の3パラメータ
 #module("@zag-js/switch")
-extern "js" fn js_switch_connect(service : @js.Any, normalize : @js.Any) -> @js.Any =
+extern "js" fn js_switch_connect(state : @js.Any, send : @js.Any, normalize : @js.Any) -> @js.Any =
   "connect"
-
-// @zag-js/switch から normalize をインポート
-#module("@zag-js/switch")
-extern "js" fn js_switch_normalize() -> @js.Any =
-  "normalize"
 
 ///|
 /// @zag-js/switch の FFI バインディング
@@ -116,6 +112,33 @@ pub fn switch_create_service(machine : SwitchMachine) -> @js.Any {
 }
 
 // ============================================================
+// Normalize Props (vanilla JS 用)
+// ============================================================
+
+// 自作 JS モジュールから createNormalize をインポート
+#module("@f4ah6o/zag-js-helpers/normalize")
+extern "js" fn js_create_normalize() -> @js.Any =
+  "createNormalize"
+
+// 自作 JS モジュールから invokeNoArgs をインポート
+#module("@f4ah6o/zag-js-helpers/normalize")
+extern "js" fn js_invoke_no_args(func : @js.Any) -> @js.Any =
+  "invokeNoArgs"
+
+///|
+/// vanilla JS 用の normalize オブジェクトを作成
+/// zag.js の connect 関数に渡すためのヘルパー
+fn create_normalize() -> @js.Any {
+  js_create_normalize()
+}
+
+///|
+/// JS 関数を引数なしで呼び出す
+fn invoke_no_args(func : @js.Any) -> @js.Any {
+  js_invoke_no_args(func)
+}
+
+// ============================================================
 // Switch API (connect の結果)
 // ============================================================
 
@@ -138,27 +161,31 @@ pub fn SwitchApi::to_js(self : SwitchApi) -> @js.Any {
 }
 
 ///|
-/// rootProps を取得
+/// rootProps を取得 (関数呼び出しが必要)
 pub fn SwitchApi::get_root_props(self : SwitchApi) -> @js.Any {
-  self.js_api._get("rootProps")
+  let get_root_props = self.js_api._get("getRootProps")
+  invoke_no_args(get_root_props)
 }
 
 ///|
-/// controlProps を取得
+/// controlProps を取得 (関数呼び出しが必要)
 pub fn SwitchApi::get_control_props(self : SwitchApi) -> @js.Any {
-  self.js_api._get("controlProps")
+  let get_control_props = self.js_api._get("getControlProps")
+  invoke_no_args(get_control_props)
 }
 
 ///|
-/// thumbProps を取得
+/// thumbProps を取得 (関数呼び出しが必要)
 pub fn SwitchApi::get_thumb_props(self : SwitchApi) -> @js.Any {
-  self.js_api._get("thumbProps")
+  let get_thumb_props = self.js_api._get("getThumbProps")
+  invoke_no_args(get_thumb_props)
 }
 
 ///|
-/// inputProps を取得
+/// inputProps を取得 (関数呼び出しが必要)
 pub fn SwitchApi::get_input_props(self : SwitchApi) -> @js.Any {
-  self.js_api._get("inputProps")
+  let get_input_props = self.js_api._get("getHiddenInputProps")
+  invoke_no_args(get_input_props)
 }
 
 ///|
@@ -181,8 +208,11 @@ pub fn SwitchApi::is_disabled(self : SwitchApi) -> Bool {
 
 ///|
 /// service を connect して API を取得
+/// zag.js 0.77.1: service から state と send を取り出して connect に渡す
 pub fn switch_connect(service : @js.Any) -> SwitchApi {
-  let normalize = js_switch_normalize()
-  let js_api = js_switch_connect(service, normalize)
+  let normalize = create_normalize()
+  let state = service._get("state")
+  let send = service._get("send")
+  let js_api = js_switch_connect(state, send, normalize)
   SwitchApi::from_js(js_api)
 }

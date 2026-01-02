@@ -6,5 +6,5 @@ target/
 # npm / node
 .env
 node_modules/
-package.json
-pnpm-lock.yaml
+/package.json
+/pnpm-lock.yaml
