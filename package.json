@@ -1,0 +1,33 @@
+{
+  "name": "zag",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/f4ah6o/js-zag.mbt.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/f4ah6o/js-zag.mbt/issues"
+  },
+  "homepage": "https://github.com/f4ah6o/js-zag.mbt#readme",
+  "dependencies": {
+    "@f4ah6o/zag-js-helpers": "file:./js-helpers",
+    "@zag-js/accordion": "0.77.1",
+    "@zag-js/dialog": "0.77.1",
+    "@zag-js/menu": "0.77.1",
+    "@zag-js/switch": "0.77.1",
+    "@zag-js/tabs": "0.77.1"
+  },
+  "devDependencies": {
+    "jsdom": "^27.4.0",
+    "vitest": "^4.0.16"
+  }
+}
