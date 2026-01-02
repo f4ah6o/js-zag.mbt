@@ -8,6 +8,7 @@ export function createNormalize() {
     element: identity,
     label: identity,
     input: identity,
+    button: identity,
   };
 }
 
@@ -22,4 +23,25 @@ export function invokeNoArgs(fn) {
 /// 関数をBool引数で呼び出すヘルパー
 export function invokeWithBool(fn, value) {
   return fn(value);
+}
+
+///|
+/// 関数をオブジェクト引数で呼び出すヘルパー
+/// Select コンポーネントの getItemProps などで使用
+export function invokeWithObject(fn, arg) {
+  return fn(arg);
+}
+
+///|
+/// 関数を文字列引数で呼び出すヘルパー
+/// Select コンポーネントの selectValue などで使用
+export function invokeWithString(fn, value) {
+  return fn(value);
+}
+
+///|
+/// 関数を文字列配列引数で呼び出すヘルパー
+/// Select コンポーネントの setValue で使用
+export function invokeWithStringArray(fn, arg) {
+  return fn(arg);
 }
