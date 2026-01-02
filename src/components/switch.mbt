@@ -1,6 +1,7 @@
 ///|
 /// @zag-js/switch の FFI バインディング
 /// js.mbt の設計思想に沿って実装
+/// 参考: https://zenn.dev/mizchi/articles/moonbit-js-ffi
 
 // ============================================================
 // ESM インポート
@@ -20,6 +21,10 @@ extern "js" fn js_switch_connect(service : @js.Any, normalize : @js.Any) -> @js.
 #module("@zag-js/switch")
 extern "js" fn js_switch_normalize() -> @js.Any =
   "normalize"
+
+///|
+/// @zag-js/switch の FFI バインディング
+/// js.mbt の設計思想に沿って実装
 
 // ============================================================
 // Switch Context 型
@@ -115,7 +120,7 @@ pub fn switch_create_service(machine : SwitchMachine) -> @js.Any {
 // ============================================================
 
 ///|
-/// Switch API（connect が返すオブジェクト）
+/// Switch API（connectが返すオブジェクト）
 pub(all) struct SwitchApi {
   js_api : @js.Any
 }

@@ -7,7 +7,7 @@
 // ============================================================
 
 ///|
-/// Switch デモのメイン関数
+/// Switch デモのデモ関数
 pub fn demo() -> Unit {
   // Context を作成
   let context = SwitchContext::{
@@ -26,7 +26,7 @@ pub fn demo() -> Unit {
   // Service を作成
   let js_service = switch_create_service(machine)
 
-  // Connect して API を取得
+  // Connectして API を取得
   let api = switch_connect(js_service)
 
   // 状態を確認

@@ -1,6 +1,7 @@
 ///|
 /// zag.js FFI コア関数
 /// js.mbt の設計思想に沿って実装
+/// 参考: https://zenn.dev/mizchi/articles/moonbit-js-ffi
 
 // ============================================================
 // JavaScript オブジェクト操作ユーティリティ
@@ -32,6 +33,17 @@ pub fn js_array() -> @js.Any {
 /// 配列に要素を追加
 pub extern "js" fn js_array_push(arr : @js.Any, value : @js.Any) -> Unit =
   #| (arr, value) => arr.push(value)
+
+///|
+/// console.log に出力
+pub extern "js" fn console_log(obj : @js.Any) -> Unit =
+  #| (v) => console.log(v)
+
+///|
+/// 任意の値をログに出力するヘルパー
+pub fn log[T](value : T) -> Unit {
+  console_log(@js.any(value))
+}
 
 // ============================================================
 // Service 操作用 FFI 関数
@@ -80,7 +92,7 @@ pub extern "js" fn js_normalize_connect(
 ///|
 /// zag.js Service を表す不透明型
 #external
-pub type Service
+pub(all) type Service
 
 ///|
 /// Service を作成（machine 関数の結果から）
@@ -93,7 +105,7 @@ pub fn Service::to_js(self : Service) -> @js.Any = "%identity"
 ///|
 /// Connect API を表す不透明型
 #external
-pub type Api
+pub(all) type Api
 
 ///|
 /// API を JS 値から作成
