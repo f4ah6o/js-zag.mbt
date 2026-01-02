@@ -1,0 +1,6 @@
+{
+  "import": [
+    { "path": "mizchi/js", "alias": "js" },
+    { "path": "f4ah6o/zag/src", "alias": "zag_core" }
+  ]
+}

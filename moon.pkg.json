@@ -1,0 +1,6 @@
+{
+  "import": [
+    { "path": "mizchi/js", "alias": "js" }
+  ],
+  "warn-list": "-15"
+}
