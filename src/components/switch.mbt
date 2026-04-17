@@ -112,33 +112,6 @@ pub fn switch_create_service(machine : SwitchMachine) -> @js.Any {
 }
 
 // ============================================================
-// Normalize Props (vanilla JS 用)
-// ============================================================
-
-// 自作 JS モジュールから createNormalize をインポート
-#module("@f4ah6o/zag-js-helpers/normalize")
-extern "js" fn js_create_normalize() -> @js.Any =
-  "createNormalize"
-
-// 自作 JS モジュールから invokeNoArgs をインポート
-#module("@f4ah6o/zag-js-helpers/normalize")
-extern "js" fn js_invoke_no_args(func : @js.Any) -> @js.Any =
-  "invokeNoArgs"
-
-///|
-/// vanilla JS 用の normalize オブジェクトを作成
-/// zag.js の connect 関数に渡すためのヘルパー
-fn create_normalize() -> @js.Any {
-  js_create_normalize()
-}
-
-///|
-/// JS 関数を引数なしで呼び出す
-fn invoke_no_args(func : @js.Any) -> @js.Any {
-  js_invoke_no_args(func)
-}
-
-// ============================================================
 // Switch API (connect の結果)
 // ============================================================
 

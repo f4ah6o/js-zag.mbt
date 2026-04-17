@@ -147,39 +147,6 @@ pub fn slider_create_service(machine : SliderMachine) -> @js.Any {
 // Normalize Props (vanilla JS 用)
 // ============================================================
 
-// 自作 JS モジュールから createNormalize をインポート
-#module("@f4ah6o/zag-js-helpers/normalize")
-extern "js" fn js_create_normalize() -> @js.Any =
-  "createNormalize"
-
-///|
-/// vanilla JS 用の normalize オブジェクトを作成
-fn create_normalize() -> @js.Any {
-  js_create_normalize()
-}
-
-// 自作 JS モジュールから invokeNoArgs をインポート
-#module("@f4ah6o/zag-js-helpers/normalize")
-extern "js" fn js_invoke_no_args(func : @js.Any) -> @js.Any =
-  "invokeNoArgs"
-
-///|
-/// JS 関数を引数なしで呼び出す
-fn invoke_no_args(func : @js.Any) -> @js.Any {
-  js_invoke_no_args(func)
-}
-
-// 自作 JS モジュールから invokeWithObject をインポート
-#module("@f4ah6o/zag-js-helpers/normalize")
-extern "js" fn js_invoke_with_object(func : @js.Any, arg : @js.Any) -> @js.Any =
-  "invokeWithObject"
-
-///|
-/// JS 関数をオブジェクト引数で呼び出す
-fn invoke_with_object(func : @js.Any, arg : @js.Any) -> @js.Any {
-  js_invoke_with_object(func, arg)
-}
-
 // 自作 JS モジュールから invokeWithInt をインポート
 #module("@f4ah6o/zag-js-helpers/normalize")
 extern "js" fn js_invoke_with_int(func : @js.Any, value : Int) -> @js.Any =

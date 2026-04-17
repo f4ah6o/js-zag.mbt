@@ -216,50 +216,15 @@ pub fn select_create_service(machine : SelectMachine) -> @js.Any {
 // Normalize Props (vanilla JS 用)
 // ============================================================
 
-// 自作 JS モジュールから invokeWithObject をインポート（getItemProps用）
-#module("@f4ah6o/zag-js-helpers/normalize")
-extern "js" fn js_invoke_with_object(func : @js.Any, arg : @js.Any) -> @js.Any =
-  "invokeWithObject"
-
 // 自作 JS モジュールから invokeWithStringArray をインポート
 #module("@f4ah6o/zag-js-helpers/normalize")
 extern "js" fn js_invoke_with_string_array(func : @js.Any, arg : @js.Any) -> @js.Any =
   "invokeWithStringArray"
 
 ///|
-/// JS 関数をオブジェクト引数で呼び出す
-fn invoke_with_object(func : @js.Any, arg : @js.Any) -> @js.Any {
-  js_invoke_with_object(func, arg)
-}
-
-///|
 /// JS 関数を文字列配列引数で呼び出す
 fn invoke_with_string_array(func : @js.Any, arg : @js.Any) -> @js.Any {
   js_invoke_with_string_array(func, arg)
-}
-
-///|
-/// JS 関数を引数なしで呼び出す（既存のcheckbox.mbtで定義済み）
-#module("@f4ah6o/zag-js-helpers/normalize")
-extern "js" fn js_invoke_no_args(func : @js.Any) -> @js.Any =
-  "invokeNoArgs"
-
-///|
-/// JS 関数を引数なしで呼び出す
-fn invoke_no_args(func : @js.Any) -> @js.Any {
-  js_invoke_no_args(func)
-}
-
-///|
-/// vanilla JS 用の normalize オブジェクトを作成（既存のswitch.mbtで定義済み）
-#module("@f4ah6o/zag-js-helpers/normalize")
-extern "js" fn js_create_normalize() -> @js.Any =
-  "createNormalize"
-
-///|
-/// vanilla JS 用の normalize オブジェクトを作成
-fn create_normalize() -> @js.Any {
-  js_create_normalize()
 }
 
 // ============================================================
@@ -454,17 +419,6 @@ extern "js" fn js_invoke_with_string(func : @js.Any, value : String) -> @js.Any 
 /// JS 関数を文字列引数で呼び出す
 fn invoke_with_string(func : @js.Any, value : String) -> @js.Any {
   js_invoke_with_string(func, value)
-}
-
-// 自作 JS モジュールから invokeWithBool をインポート（setOpen用）
-#module("@f4ah6o/zag-js-helpers/normalize")
-extern "js" fn js_invoke_with_bool(func : @js.Any, value : Bool) -> @js.Any =
-  "invokeWithBool"
-
-///|
-/// JS 関数を Bool 引数で呼び出す
-fn invoke_with_bool(func : @js.Any, value : Bool) -> @js.Any {
-  js_invoke_with_bool(func, value)
 }
 
 ///|

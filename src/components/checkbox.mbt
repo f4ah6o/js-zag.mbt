@@ -138,22 +138,6 @@ pub fn checkbox_create_service(machine : CheckboxMachine) -> @js.Any {
 }
 
 // ============================================================
-// Normalize Props (vanilla JS 用)
-// ============================================================
-
-// 自作 JS モジュールから invokeWithBool をインポート（setChecked用）
-// create_normalize, invoke_no_args は switch.mbt で定義済み
-#module("@f4ah6o/zag-js-helpers/normalize")
-extern "js" fn js_invoke_with_bool(func : @js.Any, value : Bool) -> @js.Any =
-  "invokeWithBool"
-
-///|
-/// JS 関数を Bool 引数で呼び出す
-fn invoke_with_bool(func : @js.Any, value : Bool) -> @js.Any {
-  js_invoke_with_bool(func, value)
-}
-
-// ============================================================
 // Checkbox API (connect の結果)
 // ============================================================
 
